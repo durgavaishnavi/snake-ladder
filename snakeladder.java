@@ -4,6 +4,7 @@ public class snakeladder{
 	public static final int ladder = 1;
 	public static final int snake = 2;
 	public static void main(String[] args){
+		double position = 0.0;
 		System.out.println("Welcome to the game SNAKE_LADDER......");
 		char input;
 		System.out.println("Press 'S' to Start the game");
@@ -18,14 +19,22 @@ public class snakeladder{
 		switch (dicecheck) {
 			case no_chance:
 				System.out.println("YOU DON'T GET A CHANCE...ROLL DIE NEXT TIME");
+				position = position + dice_value;
 				break;
 			case ladder:
 				System.out.println("YOU GOT A LADDER...GO AHEAD...");
+				position = dice_value + 5;
 				break;
 			case snake:
 				System.out.println("YOU GET IN TO SNAKE...YOU GO BEHIND");
+				position = dice_value - 5;
+				if (position < 0)
+					System.out.println("Your have to restart from -- 0 --");
+				else
+					System.out.println("after snake you left in : " + position);
 				break;
 			default:
 }
+		System.out.println("Current position is : " + position);
 }
 }
