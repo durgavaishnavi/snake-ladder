@@ -7,5 +7,9 @@ public class snakeladder{
 		Scanner s =new Scanner(System.in);
 		input=s.next().charAt(0);
 		System.out.println("Hello Player you are at position -- 0 --");
+		System.out.println("Your turn dice is rolling....");
+		double random = Math.floor(Math.random() * 10) % 6;
+		double dice_value = random+1;
+		System.out.println("You got :" + dice_value);
 }
 }
